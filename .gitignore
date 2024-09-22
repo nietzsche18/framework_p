@@ -1,0 +1,7 @@
+.env
+
+# Ignorer le dossier complet historical_data
+data_collection/historical_data/
+data_collection/historical_data/full.csv
+
+trading

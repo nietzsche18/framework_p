@@ -1,0 +1,54 @@
+Intro :
+
+Trouve moi une stratégie pour exploiter cette asymétrie. Voici comment je décris une stratégie: une stratégie consiste en des règles strictes d'entrée et des règles strictes de sortie. La règle d'entrée va dépendre de ce que tu viens de dire, mais la règle de sortie doit calculer quels seraient le stop loss et le take profit optimaux pour tirer un maximum de valeur de cette stratégie. Si on en sait pas lequel entre le stop loss ou le take profit a été déclenché, on considérera que c'est le stop loss. Ces éléments peuvent être calculer à partir d'indicateurs, à partir de certains pourcentages ou à partir d'un ratio par rapport à l'écart type.
+
+Je suis un trader et je cherche des asymétries dans mes données qui vont me permettre de trouver des stratégies très rentables (>30% / an). Voici un fichier avec des informations sur plusieurs actions. N'hésite pas à me faire des suggestions qui pourraient m'aider à analyser ces données.
+
+Create 5 beautiful and useful visualizations based on the data that is relevant to financial analysts and traders.
+
+ Here is the TESLA Inc Last 5 Years Stock Historical dataset, take a look and tell me what you find.
+
+Je veux construire des stratégies de trading long à l'ouverture du marché. Je veux donc des critères qui m'indique quand je dois acheter à l'ouverture du marché, à quelle niveau je dois placer mon take profit, à quel niveau je dois placer mon stop loss. Si mon stop loss est au dessus de 'first_hour_max_down', alors cela signifie qu'il a été déclenché. Si mon stop loss n'est pas déclenché et que mon take profit est en dessous de 'first_hour_max_up', cela signifie que c'est mon take profit qui a été déclenché. Si ni mon stop loss ni mon take profit n'a été déclenché alors je sors à la fin de l'heure et ma performance sur le trade correspond à 'first_hour_move'. J'ai une liste de paramètres à optimiser. Je veux que tu fasses toutes les combinaisons de 4 paramètres avec une segmentation de 6 pour chaque paramètre et me donner la liste des 10 meilleures stratégies (4 critères x segmentations). Voici les paramètres à optimiser : week_day, average_dollar_volume_previous_day, pm_volume, gap, x_day_high_at_open, x_day_low_at_open, sigma_percent, open_from_20sma, open_from_50sma, open_from_200sma, sigma_ratio_open_from_20sma, consecutive_days_above_20sma, open_from_BB_up, open_from_BB_down, 1month_change_from_high, 3month_change_from_high, 6month_change_from_high, red_days, green_days, pm_dollar_volume, first_hour_volume, first_hour_relative_volume, duration_before_breakout_of_pm_high, lower_move_before_breakout_of_pm_high, duration_below_9ema_first_hour, duration_below_20ema_first_hour, duration_below_vwap_first_hour, percent_of_red_candles_one_hour_before_open, from_pm_high_to_open, pm_retracement, days_til_next_earnings
+
+Si mon stop loss est au dessus de 'first_hour_max_down', alors cela signifie qu'il a été déclenché. Si mon stop loss n'est pas déclenché et que mon take profit est en dessous de 'first_hour_max_up', cela signifie que c'est mon take profit qui a été déclenché. Si ni mon stop loss ni mon take profit n'a été déclenché alors je sors à la fin de l'heure et ma performance sur le trade correspond à 'first_hour_move'.
+
+quand le pm_volume est relativement élevé et que l'average_dollar_volume_previous_day est relativement faible, montre moi la répartition de la performance selon le gap (par tranche de 1%)
+
+pour les critères suivants, montre moi un graphique avec la performance moyenne de first_hour_move selon des tranches adaptées: pm_volume, x_day_high_at_open, open_from_20sma, open_from_BB_up
+
+donne moi la moyenne de duration_before_breakout_of_pm_high lorsque open_to_close_move est dans le top 10 percentiles
+donne moi la distribution de duration_before_breakout_of_pm_high lorsque open_to_close_move est dans le top 10 percentiles
+
+y a-t-il une corrélation entre days_til_next_earnings et sigma_percent
+
+montre moi un nuage de point qui compare duration_before_breakout_of_pm_high et open_to_close_move
+
+quand sigma_percent est bas, que le gap est élevé et que open_from_BB_up est bas
+
+quelle est la probabilité qu'il y ait un nouveau green_day si
+
+montre moi la distribution de first_hour_move pour des tranches de gap entre [0:4[ avec des pas de 0.5
+
+montre moi la corrélation entre les actions
+
+y a-t-il moyen de trouver une stratégie de mean-reversion sur ce groupe d'actions? c'est à dire, calculer un une pondération moyenne de chaque action par rapport aux autres et lorsque l'un d'entre elle s'en éloigne alors elle aurait tendance à revenir vers l'équilibre
+
+quelle est la valeur moyenne de first_hour_move quand consecutive_days_above_20sma est élevé et red_days aussi? cela concerne combien de lignes?
+
+analyse percentile :
+je veux faire un script qui va me permettre d'identifier des facteurs déterminants dans la performance de plusieurs target à partir des percentiles de plusieurs paramètres. j'ai donc un dataframe avec les targets suivantes : 'first_hour_move', 'open_to_close_move', 'power_hour_move'. j'ai les paramètres suivants qui sont les percentiles selon le ticker d'un paramètre: 'gap_percentile', 'consecutive_days_above_20sma_percentile', 'open_from_BB_up_percentile', 'pm_dollar_volume_percentile','x_day_high_at_open_percentile','1month_change_from_high_percentile','red_days_percentile','green_days_percentile','lower_move_before_breakout_of_pm_high_percentile'. Je veux faire un grid search qui va calculer la somme de mes targets pour toutes les combinaisons de 3 paramètres et tester pour chaque paramètre lorsque le paramètre est: au dessus du 70e percentile, ou au dessus du 90e percentile, ou en dessous du 30 percentile, ou en dessous du 10e percentile, ou entre le 30e et le 70e percentile. Je veux que cela concerne au minimum 50 lignes à chaque fois.
+
+filtre TSLA,
+
+corrélation :
+- compare la corrélation de X avec ces features
+-
+
+
+
+quelle est la probabilité
+
+
+
+to do avec data cleans:
+- quelle est la performance moyenne (move_from_breakout_of_pm_high) quand duration_before_breakout_of_pm_high est inférieur à 1h (et différent de None) ?

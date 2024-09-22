@@ -1,0 +1,2 @@
+,ticker,green_days,red_days,from_pm_high_to_open,gap,market_cap,number_of_red_candles_one_hour_before_open,percent_of_red_candles_one_hour_before_open,pm_float_rotation,pm_dollar_volume,sigma_percent,pred,returns,date,cumulative_returns,win,Running_Max,Drawdown
+34927,TEAM,0,1,0.005102606766500208,0.0258703651287856,46574809808.54,1.0,0.14285714285714285,1.260417848516033e-05,343774.34,0.0387840057451795,0.83780766,1.015,2023-07-27,0.014999999999999902,1,0.014999999999999902,0.0

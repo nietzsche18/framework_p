@@ -1,0 +1,5 @@
+name,description,filters,model_name,model_type,occurences,compounded_return,cagr,average_trade,win_rate,max_drawdown,max_consecutives_losses,sharpe_ratio,sortino_ratio,date_debut,date_fin,random_test_set,period_duration
+strat1_percentile,max_up < 2%; max_down < -1% ; first hour (RR 2:1),['market_cap>100b'],xgboost,classification,8,0.9611952611949324,0,-0.004905520112163608,0.25,-0.0,4,0,0,2022-01-19 00:00:00,2022-05-23 00:00:00,False,150
+strat1_percentile,max_up < 2%; max_down < -1% ; first hour (RR 2:1),['market_cap>100b'],xgboost,classification,36,1.012920555830223,0,0.0003900498574405109,0.5277777777777778,-11.539654698295013,5,0,0,2022-06-10 00:00:00,2022-10-21 00:00:00,False,151
+strat1_percentile,max_up < 2%; max_down < -1% ; first hour (RR 2:1),['market_cap>100b'],xgboost,classification,23,0.9373641220767044,0,-0.002786394918757984,0.34782608695652173,0.0,8,0,0,2022-11-07 00:00:00,2023-04-03 00:00:00,False,149
+strat1_percentile,max_up < 2%; max_down < -1% ; first hour (RR 2:1),['market_cap>100b'],xgboost,classification,45,1.0235755227365555,0,0.0005461967935134204,0.6,-5.761276031713623,5,0,0,2023-04-10 00:00:00,2023-08-03 00:00:00,False,119
